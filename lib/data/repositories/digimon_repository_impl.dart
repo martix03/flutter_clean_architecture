@@ -13,8 +13,9 @@ class DigimonRepositoryImp extends DigimonRepository {
   @override
   Future<Either<String, List<DigimonEntity>>> getDigimonList() async {
     try {
+      var list = await _digimonService.getDigimonList();
       return Right(
-          DigimonMapping.mapDigimon(await _digimonService.getDigimonList()));
+          DigimonMapping.mapDigimon(list));
     } catch (e) {
       return Left("Error");
     }

@@ -12,7 +12,9 @@ class _DigimonServiceImpl implements DigimonServiceImpl {
   _DigimonServiceImpl(
     this._dio, {
     this.baseUrl,
-  });
+  }) {
+    baseUrl ??= 'https://digimon-api.herokuapp.com/api/digimon';
+  }
 
   final Dio _dio;
 
